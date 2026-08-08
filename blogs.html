@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Wedding Journal & Editorial | VK Events</title>
+    <link rel="icon" type="image/png" href="assets/logo.png"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7d5700",
+                        "primary-container": "#c9973a",
+                        "primary-fixed": "#ffdeab",
+                        "primary-fixed-dim": "#f4be5d",
+                        "on-primary-container": "#271900",
+                        "background": "#faf9f6",
+                        "surface": "#faf9f6",
+                        "surface-container": "#efeeeb",
+                        "surface-container-low": "#f4f3f1",
+                        "surface-container-high": "#e9e8e5",
+                        "surface-container-highest": "#e3e2e0",
+                        "on-surface": "#1a1c1a",
+                        "on-surface-variant": "#4f4537",
+                        "outline": "#817565",
+                        "outline-variant": "#d3c4b1"
+                    },
+                    fontFamily: {
+                        "sans": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden">
+
+    <!-- Top Navigation Bar -->
+        <!-- Floating Glass Navigation Bar with Rounded Corners -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4 pb-2">
+        <nav class="max-w-6xl mx-auto bg-surface/80 backdrop-blur-xl border border-outline-variant/30 rounded-full shadow-2xl px-6 py-2.5 flex justify-between items-center transition-all duration-300">
+            <!-- Brand Logo Emblem -->
+            <a class="flex items-center group pl-2" href="index.html">
+                <img src="assets/logo.png" alt="VK Logo Emblem" class="h-10 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow"/>
+            </a>
+
+            <!-- Desktop Navigation Links (No About / Services) -->
+            <div class="hidden lg:flex items-center space-x-7">
+                <a class="text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+                <a class="text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="gallery.html">Gallery</a>
+                <a class="text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="blogs.html">Blogs</a>
+                <a class="text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
+            </div>
+
+            <!-- Inquire CTA Button -->
+            <div class="flex items-center space-x-3">
+                <a class="hidden sm:inline-flex items-center justify-center bg-primary text-white font-bold text-xs px-6 py-2.5 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-all uppercase tracking-widest shadow-md hover:shadow-lg" href="contact.html">
+                    Inquire Now
+                </a>
+                <button id="mobile-menu-btn" aria-label="Toggle Menu" class="lg:hidden text-primary p-1.5 focus:outline-none">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Drawer Menu (Rounded Glass) -->
+        <div id="mobile-menu" class="hidden lg:hidden max-w-6xl mx-auto mt-2 bg-surface/95 backdrop-blur-xl border border-outline-variant/30 rounded-2xl p-6 space-y-4 shadow-2xl">
+            <a class="block text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary" href="index.html">Home</a>
+            <a class="block text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary" href="gallery.html">Gallery & Media</a>
+            <a class="block text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary" href="blogs.html">Blogs</a>
+            <a class="block text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary" href="contact.html">Contact</a>
+            <a class="inline-block w-full text-center bg-primary text-white font-bold text-xs px-6 py-3 rounded-full uppercase tracking-widest mt-2" href="contact.html">
+                Inquire Now
+            </a>
+        </div>
+    </header>
+
+    <!-- Header Banner Section -->
+    <section class="pt-36 pb-20 bg-surface-container-low px-6 md:px-12 border-b border-outline-variant/30 text-center">
+        <div class="max-w-4xl mx-auto">
+            <img src="assets/logo.png" alt="VK Logo Emblem" class="w-16 h-16 mx-auto mb-4 object-contain opacity-90"/>
+            <span class="text-xs uppercase tracking-[0.25em] text-primary font-bold block mb-3">Insights & Editorial</span>
+            <h1 class="font-serif text-4xl sm:text-6xl text-on-surface font-semibold mb-6">The Wedding Journal</h1>
+            <p class="text-base sm:text-lg text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed">
+                In-depth luxury event planning guides, Vastu spatial aesthetics, high-end hospitality insights, and venue highlights across <strong>All Over Jharkhand</strong> by VK Events.
+            </p>
+            <div class="mt-6 inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+                <span class="material-symbols-outlined text-primary text-sm">location_on</span>
+                <span class="text-xs uppercase tracking-widest text-primary font-semibold">Services Available All Over Jharkhand</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Articles Grid (Long-Form Expanded Articles) -->
+    <section class="py-24 max-w-7xl mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Blog Card 1 -->
+            <article class="bg-surface rounded-2xl overflow-hidden shadow-md border border-outline-variant/30 hover:shadow-xl transition-all group flex flex-col cursor-pointer" onclick="openBlogModal(1)">
+                <div class="h-64 relative overflow-hidden">
+                    <img src="assets/images/real-video-frame-9.jpg" alt="Jharkhand Destination Weddings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <span class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded backdrop-blur-md">Jharkhand Venues</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-xs text-on-surface-variant font-medium">August 2026 • 12 min read</span>
+                        <h3 class="font-serif text-xl font-semibold mt-2 text-on-surface group-hover:text-primary transition-colors">
+                            The Evolution of Grand Destination Weddings Across Jharkhand: From Ranchi to Netarhat
+                        </h3>
+                        <p class="text-sm text-on-surface-variant font-light mt-2 line-clamp-3">
+                            Discover how serene patratu lakesides, Netarhat hilltops, and Ranchi 5-star estates are defining India's new luxury wedding capital.
+                        </p>
+                    </div>
+                    <button class="inline-flex items-center text-xs uppercase tracking-widest text-primary font-bold hover:text-primary-container">
+                        Read Full Article <span class="material-symbols-outlined ml-1 text-sm">menu_book</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Blog Card 2 -->
+            <article class="bg-surface rounded-2xl overflow-hidden shadow-md border border-outline-variant/30 hover:shadow-xl transition-all group flex flex-col cursor-pointer" onclick="openBlogModal(2)">
+                <div class="h-64 relative overflow-hidden">
+                    <img src="assets/images/real-video-frame-10.jpg" alt="Vastu Mandap Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <span class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded backdrop-blur-md">Sacred Architecture</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-xs text-on-surface-variant font-medium">July 2026 • 10 min read</span>
+                        <h3 class="font-serif text-xl font-semibold mt-2 text-on-surface group-hover:text-primary transition-colors">
+                            Designing Sacred Spaces: Vastu Shastra & Royal Mandap Spatial Aesthetics
+                        </h3>
+                        <p class="text-sm text-on-surface-variant font-light mt-2 line-clamp-3">
+                            A deep dive into cardinal alignments, Havan Kund Vastu placement, acoustic floral domes, and transparent acrylic mandap engineering.
+                        </p>
+                    </div>
+                    <button class="inline-flex items-center text-xs uppercase tracking-widest text-primary font-bold hover:text-primary-container">
+                        Read Full Article <span class="material-symbols-outlined ml-1 text-sm">menu_book</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Blog Card 3 -->
+            <article class="bg-surface rounded-2xl overflow-hidden shadow-md border border-outline-variant/30 hover:shadow-xl transition-all group flex flex-col cursor-pointer" onclick="openBlogModal(3)">
+                <div class="h-64 relative overflow-hidden">
+                    <img src="assets/images/real-video-frame-7.jpg" alt="Atmospheric Mandap & Lighting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <span class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded backdrop-blur-md">Atmospheric Lighting</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-xs text-on-surface-variant font-medium">June 2026 • 11 min read</span>
+                        <h3 class="font-serif text-xl font-semibold mt-2 text-on-surface group-hover:text-primary transition-colors">
+                            Atmospheric Mandap Lighting & Grand Stage Architecture in Jharkhand
+                        </h3>
+                        <p class="text-sm text-on-surface-variant font-light mt-2 line-clamp-3">
+                            Discover how architectural mandap illumination, dynamic stage lighting, and spatial canopy designs create unforgettable visual spectacles.
+                        </p>
+                    </div>
+                    <button class="inline-flex items-center text-xs uppercase tracking-widest text-primary font-bold hover:text-primary-container">
+                        Read Full Article <span class="material-symbols-outlined ml-1 text-sm">menu_book</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Blog Card 4 -->
+            <article class="bg-surface rounded-2xl overflow-hidden shadow-md border border-outline-variant/30 hover:shadow-xl transition-all group flex flex-col cursor-pointer" onclick="openBlogModal(4)">
+                <div class="h-64 relative overflow-hidden">
+                    <img src="assets/images/decor-centerpiece.jpg" alt="Gourmet Banquet Curation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <span class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded backdrop-blur-md">Culinary Curation</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-xs text-on-surface-variant font-medium">May 2026 • 9 min read</span>
+                        <h3 class="font-serif text-xl font-semibold mt-2 text-on-surface group-hover:text-primary transition-colors">
+                            Gourmet Culinary Curation & Traditional Royal Feast Dining Standards
+                        </h3>
+                        <p class="text-sm text-on-surface-variant font-light mt-2 line-clamp-3">
+                            Integrating authentic local Jharkhand delicacies like Dhuska & Pittha alongside French silver platter dining and Michelin-level banquets.
+                        </p>
+                    </div>
+                    <button class="inline-flex items-center text-xs uppercase tracking-widest text-primary font-bold hover:text-primary-container">
+                        Read Full Article <span class="material-symbols-outlined ml-1 text-sm">menu_book</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Blog Card 5 -->
+            <article class="bg-surface rounded-2xl overflow-hidden shadow-md border border-outline-variant/30 hover:shadow-xl transition-all group flex flex-col cursor-pointer" onclick="openBlogModal(5)">
+                <div class="h-64 relative overflow-hidden">
+                    <img src="assets/images/real-video-frame-8.jpg" alt="Concert Stage Lighting Tech" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <span class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded backdrop-blur-md">Event Tech</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-xs text-on-surface-variant font-medium">April 2026 • 8 min read</span>
+                        <h3 class="font-serif text-xl font-semibold mt-2 text-on-surface group-hover:text-primary transition-colors">
+                            Architectural Lighting, 3D Projection & Stage Technology in Modern Sangeets
+                        </h3>
+                        <p class="text-sm text-on-surface-variant font-light mt-2 line-clamp-3">
+                            Deploying stadium-scale 4K curved LED walls, 2700K warm architectural pin-spotting, DMX pyrotechnics, and laser choreography.
+                        </p>
+                    </div>
+                    <button class="inline-flex items-center text-xs uppercase tracking-widest text-primary font-bold hover:text-primary-container">
+                        Read Full Article <span class="material-symbols-outlined ml-1 text-sm">menu_book</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Blog Card 6 -->
+            <article class="bg-surface rounded-2xl overflow-hidden shadow-md border border-outline-variant/30 hover:shadow-xl transition-all group flex flex-col cursor-pointer" onclick="openBlogModal(6)">
+                <div class="h-64 relative overflow-hidden">
+                    <img src="assets/images/real-video-frame-4.jpg" alt="Booking Timeline Guide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <span class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded backdrop-blur-md">Planning Master Guide</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-xs text-on-surface-variant font-medium">March 2026 • 15 min read</span>
+                        <h3 class="font-serif text-xl font-semibold mt-2 text-on-surface group-hover:text-primary transition-colors">
+                            The Comprehensive Timeline & Guide to Booking Luxury Event Managers in Jharkhand
+                        </h3>
+                        <p class="text-sm text-on-surface-variant font-light mt-2 line-clamp-3">
+                            A complete 12-month timeline for locking in venues, selecting spatial designs, artist bookings, and technical rehearsals across Jharkhand.
+                        </p>
+                    </div>
+                    <button class="inline-flex items-center text-xs uppercase tracking-widest text-primary font-bold hover:text-primary-container">
+                        Read Full Article <span class="material-symbols-outlined ml-1 text-sm">menu_book</span>
+                    </button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-highest text-on-surface pt-16 pb-8 border-t border-outline-variant/30">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div class="space-y-4">
+                <a class="flex items-center space-x-3" href="index.html">
+                    <img src="assets/logo.png" alt="VK Logo" class="h-10 w-auto"/>
+                    <span class="font-serif font-bold text-lg text-primary">VK Events</span>
+                </a>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Jharkhand's premier luxury event management firm specializing in royal weddings, atmospheric mandap decor, and grand stage setups across <strong>All Over Jharkhand</strong>.
+                </p>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-primary">Quick Links</h4>
+                <ul class="space-y-2 text-xs text-on-surface-variant">
+                    <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="gallery.html" class="hover:text-primary transition-colors">Photo & Video Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-primary">Explore</h4>
+                <ul class="space-y-2 text-xs text-on-surface-variant">
+                    <li><a href="gallery.html" class="hover:text-primary transition-colors">Visual Portfolio</a></li>
+                    <li><a href="blogs.html" class="hover:text-primary transition-colors">Wedding Insights</a></li>
+                    <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-primary">Connect & Direct Inquiry</h4>
+                <p class="text-xs text-on-surface-variant">Phone / WhatsApp: <a href="https://wa.me/916203924850" class="text-primary font-bold hover:underline">+91 62039 24850</a></p>
+                <p class="text-xs text-on-surface-variant">Email: contact@vkevents.com</p>
+                <p class="text-xs text-on-surface-variant">Headquarters: Ranchi Studio & Services <strong>All Over Jharkhand</strong></p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 pt-6 border-t border-outline-variant/20 flex flex-col sm:flex-row justify-between items-center text-xs text-on-surface-variant">
+            <p>© 2026 VK Events. All Rights Reserved. Serving All Over Jharkhand.</p>
+            <div class="flex space-x-6 mt-4 sm:mt-0">
+                <a href="#" class="hover:text-primary">Privacy Policy</a>
+                <a href="#" class="hover:text-primary">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/916203924850?text=Hello%20VK%20Events%2C%20I%20would%20like%20to%20inquire%20about%20your%20services%20in%20Jharkhand." target="_blank" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center space-x-2 group">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span class="text-xs font-bold uppercase tracking-wider hidden group-hover:inline-block pr-1">WhatsApp Us</span>
+    </a>
+
+    <!-- Full Article Reader Modal -->
+    <div id="blog-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-md p-4 transition-all overflow-y-auto">
+        <div class="relative w-full max-w-3xl bg-surface rounded-2xl overflow-hidden shadow-2xl border border-primary/30 my-8 p-8 md:p-12 text-on-surface">
+            <button id="close-blog-modal" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 text-primary flex items-center justify-center transition">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="space-y-4">
+                <span id="blog-modal-category" class="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded inline-block">Category</span>
+                <h2 id="blog-modal-title" class="font-serif text-2xl md:text-4xl font-semibold text-on-surface">Article Title</h2>
+                <div id="blog-modal-date" class="text-xs text-on-surface-variant font-medium">Date info</div>
+                <hr class="border-outline-variant/30 my-4"/>
+                <div id="blog-modal-content" class="text-on-surface-variant text-base leading-relaxed font-light space-y-4">
+                    <!-- Dynamic content injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

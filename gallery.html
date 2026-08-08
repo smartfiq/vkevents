@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Multimedia Gallery | VK Events</title>
+    <link rel="icon" type="image/png" href="assets/logo.png"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7d5700",
+                        "primary-container": "#c9973a",
+                        "primary-fixed": "#ffdeab",
+                        "primary-fixed-dim": "#f4be5d",
+                        "on-primary-container": "#271900",
+                        "background": "#faf9f6",
+                        "surface": "#faf9f6",
+                        "surface-container": "#efeeeb",
+                        "surface-container-low": "#f4f3f1",
+                        "surface-container-high": "#e9e8e5",
+                        "surface-container-highest": "#e3e2e0",
+                        "on-surface": "#1a1c1a",
+                        "on-surface-variant": "#4f4537",
+                        "outline": "#817565",
+                        "outline-variant": "#d3c4b1"
+                    },
+                    fontFamily: {
+                        "sans": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden">
+
+    <!-- Top Navigation Bar -->
+        <!-- Floating Glass Navigation Bar with Rounded Corners -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4 pb-2">
+        <nav class="max-w-6xl mx-auto bg-surface/80 backdrop-blur-xl border border-outline-variant/30 rounded-full shadow-2xl px-6 py-2.5 flex justify-between items-center transition-all duration-300">
+            <!-- Brand Logo Emblem -->
+            <a class="flex items-center group pl-2" href="index.html">
+                <img src="assets/logo.png" alt="VK Logo Emblem" class="h-10 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow"/>
+            </a>
+
+            <!-- Desktop Navigation Links (No About / Services) -->
+            <div class="hidden lg:flex items-center space-x-7">
+                <a class="text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+                <a class="text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="gallery.html">Gallery</a>
+                <a class="text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="blogs.html">Blogs</a>
+                <a class="text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
+            </div>
+
+            <!-- Inquire CTA Button -->
+            <div class="flex items-center space-x-3">
+                <a class="hidden sm:inline-flex items-center justify-center bg-primary text-white font-bold text-xs px-6 py-2.5 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-all uppercase tracking-widest shadow-md hover:shadow-lg" href="contact.html">
+                    Inquire Now
+                </a>
+                <button id="mobile-menu-btn" aria-label="Toggle Menu" class="lg:hidden text-primary p-1.5 focus:outline-none">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Drawer Menu (Rounded Glass) -->
+        <div id="mobile-menu" class="hidden lg:hidden max-w-6xl mx-auto mt-2 bg-surface/95 backdrop-blur-xl border border-outline-variant/30 rounded-2xl p-6 space-y-4 shadow-2xl">
+            <a class="block text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary" href="index.html">Home</a>
+            <a class="block text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary" href="gallery.html">Gallery & Media</a>
+            <a class="block text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary" href="blogs.html">Blogs</a>
+            <a class="block text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary" href="contact.html">Contact</a>
+            <a class="inline-block w-full text-center bg-primary text-white font-bold text-xs px-6 py-3 rounded-full uppercase tracking-widest mt-2" href="contact.html">
+                Inquire Now
+            </a>
+        </div>
+    </header>
+
+    <!-- Header Banner Section -->
+    <section class="pt-36 pb-16 bg-surface-container-low px-6 md:px-12 border-b border-outline-variant/30 text-center">
+        <div class="max-w-4xl mx-auto">
+            <img src="assets/logo.png" alt="VK Logo Emblem" class="w-16 h-16 mx-auto mb-4 object-contain opacity-90"/>
+            <span class="text-xs uppercase tracking-[0.25em] text-primary font-bold block mb-3">Services Provided All Over Jharkhand</span>
+            <h1 class="font-serif text-4xl sm:text-6xl text-on-surface font-semibold mb-6">Multimedia Showcase</h1>
+            <p class="text-base sm:text-lg text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed mb-8">
+                Immerse yourself in our collection of real event photographs and live video highlight reels captured across <strong>All Over Jharkhand</strong> (Ranchi, Patratu, Jamshedpur, Dhanbad, Deoghar, and beyond).
+            </p>
+
+            <!-- Gallery Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <button class="gallery-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-primary text-white shadow-lg transition-all" data-filter="all">All Media</button>
+                <button class="gallery-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-surface-container-low text-on-surface-variant hover:bg-primary-container/20 transition-all" data-filter="photo">Photos</button>
+                <button class="gallery-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-surface-container-low text-on-surface-variant hover:bg-primary-container/20 transition-all" data-filter="video">Video Highlights</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid Section -->
+    <section class="py-16 max-w-7xl mx-auto px-6 md:px-12">
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-xl h-72 border-2 border-primary/40" data-category="photo">
+                <img src="assets/images/real-decor-1.jpg" alt="Featured Royal Mandap Architecture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded shadow">Featured Masterpiece 1</div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Bespoke Mandap & Pool Setup</span>
+                    <span class="bg-primary/90 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-xl h-72 border-2 border-primary/40" data-category="photo">
+                <img src="assets/images/real-decor-2.jpg" alt="Featured Palace Celebration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded shadow">Featured Masterpiece 2</div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Palace Courtyard & Mandap Lighting</span>
+                    <span class="bg-primary/90 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-xl h-72 border-2 border-primary/40" data-category="video" onclick="openVideoModal('assets/videos/user-client-video-1.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/user-client-video-1.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded shadow z-10">New Video Highlight</div>
+                <div class="absolute inset-0 bg-black/35 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-4xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Grand Celebration Production Reel 1</span>
+                    <span class="bg-black/70 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-xl h-72 border-2 border-primary/40" data-category="video" onclick="openVideoModal('assets/videos/user-client-video-2.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/user-client-video-2.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded shadow z-10">New Video Highlight</div>
+                <div class="absolute inset-0 bg-black/35 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-4xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Royal Mandap & Lighting Reel 2</span>
+                    <span class="bg-black/70 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-xl h-72 border-2 border-primary/40" data-category="video" onclick="openVideoModal('assets/videos/user-client-video-3.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/user-client-video-3.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded shadow z-10">New Video Highlight</div>
+                <div class="absolute inset-0 bg-black/35 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-4xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Sangeet Concert & Pyro Reel 3</span>
+                    <span class="bg-black/70 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-xl h-72 border-2 border-primary/40" data-category="video" onclick="openVideoModal('assets/videos/user-client-video-4.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/user-client-video-4.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded shadow z-10">New Video Highlight</div>
+                <div class="absolute inset-0 bg-black/35 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-4xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Luxury Reception Experience Reel 4</span>
+                    <span class="bg-black/70 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/real-video-frame-1.jpg" alt="Oberoi Udaivilas Setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Lakeside Cultural Mandap</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/real-video-frame-2.jpg" alt="Atmospheric Mandap Lighting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Atmospheric Mandap & Lighting</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/real-video-frame-3.jpg" alt="Live Musical Performance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Sangeet Stage & Live Performance</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/real-video-frame-4.jpg" alt="Luxury Reception Experience" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Royal Banquet Reception</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/real-video-frame-5.jpg" alt="Palace Setup Frame" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Palace Setup & Courtyard</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/real-video-frame-6.jpg" alt="Concert Stage Lighting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Intelligent Concert Lighting</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/real-video-frame-7.jpg" alt="Atmospheric Mandap & Lighting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Atmospheric Mandap & Lighting</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/real-video-frame-8.jpg" alt="Royal Protocol Concierge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Royal Concierge Service</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/real-video-frame-9.jpg" alt="Jharkhand Destination Estate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Jharkhand Destination Venue</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/real-video-frame-10.jpg" alt="Sacred Vastu Geometry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Sacred Vastu Mandap Design</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+            
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/decor-centerpiece.jpg" alt="Fine Dining Tablescape" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Gourmet Tablescape Curation</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/decor-chandelier.jpg" alt="Architectural Chandelier" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Crystal Chandelier Lighting</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/founder-portrait.jpg" alt="Atelier Studio Environment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Atelier Studio Environment</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/reception-stage.jpg" alt="Bespoke Stage Architecture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Grand Reception Stage</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/royal-mandap-night.jpg" alt="Night Mandap Illumination" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Sacred Night Phera Mandap</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/wedding-guest-lounge.jpg" alt="VIP Check-In Lounge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>VIP Welcome Lounge</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Photo Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden group shadow-lg h-72 border border-outline-variant/20" data-category="photo">
+                <img src="assets/images/wedding-hall-luxury.jpg" alt="Grand Palace Banquet Hall" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center">
+                    <span>Grand Banquet Hall</span>
+                    <span class="bg-primary/80 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Photo</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-lg h-72 border border-outline-variant/20" data-category="video" onclick="openVideoModal('assets/videos/video-highlight-1.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/video-highlight-1.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Royal Stage Video Reel 5</span>
+                    <span class="bg-black/60 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-lg h-72 border border-outline-variant/20" data-category="video" onclick="openVideoModal('assets/videos/video-highlight-2.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/video-highlight-2.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Mandap & Lighting Reel 6</span>
+                    <span class="bg-black/60 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-lg h-72 border border-outline-variant/20" data-category="video" onclick="openVideoModal('assets/videos/video-highlight-4.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/video-highlight-4.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Bespoke Setup Reel 7</span>
+                    <span class="bg-black/60 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-lg h-72 border border-outline-variant/20" data-category="video" onclick="openVideoModal('assets/videos/video-highlight-5.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/video-highlight-5.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Celebration Highlight Reel 8</span>
+                    <span class="bg-black/60 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-lg h-72 border border-outline-variant/20" data-category="video" onclick="openVideoModal('assets/videos/video-highlight-9.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/video-highlight-9.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Live Video Highlight Reel 9</span>
+                    <span class="bg-black/60 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-lg h-72 border border-outline-variant/20" data-category="video" onclick="openVideoModal('assets/videos/video-highlight-10.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/video-highlight-10.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Palace Reception Reel 10</span>
+                    <span class="bg-black/60 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-lg h-72 border border-outline-variant/20" data-category="video" onclick="openVideoModal('assets/videos/video-highlight-11.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/video-highlight-11.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Concert Lighting Reel 11</span>
+                    <span class="bg-black/60 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-lg h-72 border border-outline-variant/20" data-category="video" onclick="openVideoModal('assets/videos/video-highlight-12.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/video-highlight-12.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Sacred Mandap Reel 12</span>
+                    <span class="bg-black/60 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-lg h-72 border border-outline-variant/20" data-category="video" onclick="openVideoModal('assets/videos/video-highlight-14.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/video-highlight-14.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Royal Procession Reel 13</span>
+                    <span class="bg-black/60 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-lg h-72 border border-outline-variant/20" data-category="video" onclick="openVideoModal('assets/videos/video-highlight-15.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/video-highlight-15.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Stage & Canopy Reel 14</span>
+                    <span class="bg-black/60 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-lg h-72 border border-outline-variant/20" data-category="video" onclick="openVideoModal('assets/videos/video-highlight-16.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/video-highlight-16.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Fireworks & Pyro Reel 15</span>
+                    <span class="bg-black/60 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+            <!-- Video Item -->
+            <div class="gallery-item relative rounded-xl overflow-hidden cursor-pointer group shadow-lg h-72 border border-outline-variant/20" data-category="video" onclick="openVideoModal('assets/videos/video-highlight-17.mp4')">
+                <video class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" preload="metadata">
+                    <source src="assets/videos/video-highlight-17.mp4" type="video/mp4"/>
+                </video>
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                    <div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs font-semibold flex justify-between items-center drop-shadow">
+                    <span>Grand Wedding Production Reel 16</span>
+                    <span class="bg-black/60 px-2.5 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider">Video</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-highest text-on-surface pt-16 pb-8 border-t border-outline-variant/30">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div class="space-y-4">
+                <a class="flex items-center space-x-3" href="index.html">
+                    <img src="assets/logo.png" alt="VK Logo" class="h-10 w-auto"/>
+                    <span class="font-serif font-bold text-lg text-primary">VK Events</span>
+                </a>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Jharkhand's premier luxury event management firm specializing in royal weddings, atmospheric mandap decor, and grand stage setups across <strong>All Over Jharkhand</strong>.
+                </p>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-primary">Quick Links</h4>
+                <ul class="space-y-2 text-xs text-on-surface-variant">
+                    <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="gallery.html" class="hover:text-primary transition-colors">Photo & Video Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-primary">Explore</h4>
+                <ul class="space-y-2 text-xs text-on-surface-variant">
+                    <li><a href="gallery.html" class="hover:text-primary transition-colors">Visual Portfolio</a></li>
+                    <li><a href="blogs.html" class="hover:text-primary transition-colors">Wedding Insights</a></li>
+                    <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-primary">Connect & Direct Inquiry</h4>
+                <p class="text-xs text-on-surface-variant">Phone / WhatsApp: <a href="https://wa.me/916203924850" class="text-primary font-bold hover:underline">+91 62039 24850</a></p>
+                <p class="text-xs text-on-surface-variant">Email: contact@vkevents.com</p>
+                <p class="text-xs text-on-surface-variant">Headquarters: Ranchi Studio & Services <strong>All Over Jharkhand</strong></p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 pt-6 border-t border-outline-variant/20 flex flex-col sm:flex-row justify-between items-center text-xs text-on-surface-variant">
+            <p>© 2026 VK Events. All Rights Reserved. Serving All Over Jharkhand.</p>
+            <div class="flex space-x-6 mt-4 sm:mt-0">
+                <a href="#" class="hover:text-primary">Privacy Policy</a>
+                <a href="#" class="hover:text-primary">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/916203924850?text=Hello%20VK%20Events%2C%20I%20would%20like%20to%20inquire%20about%20your%20services%20in%20Jharkhand." target="_blank" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center space-x-2 group">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span class="text-xs font-bold uppercase tracking-wider hidden group-hover:inline-block pr-1">WhatsApp Us</span>
+    </a>
+
+    <!-- Video Modal Player Component -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-md p-4 transition-all">
+        <div class="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-primary/30">
+            <button id="close-video-modal" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center backdrop-blur-md transition">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <video id="modal-video-player" class="w-full h-auto max-h-[80vh] rounded-2xl" controls autoplay>
+                <source src="" type="video/mp4"/>
+                Your browser does not support video playback.
+            </video>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
